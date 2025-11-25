@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
 	printf("Server in ascolto sulla porta %d...\n", port);
 	while (1) {
 		struct sockaddr_in client_addr;
-		int client_len = sizeof(client_addr);
+		socklen_t client_len = sizeof(client_addr);
 		int client_socket = accept(server_socket, (struct sockaddr*)&client_addr, &client_len);
 		if (client_socket < 0) {
 			printf("%s", "accept() fallito.\n");
@@ -166,3 +166,4 @@ int main(int argc, char *argv[]) {
 	clearwinsock();
 	return 0;
 }
+
