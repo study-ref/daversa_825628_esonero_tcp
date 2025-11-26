@@ -9,6 +9,7 @@
 
 #if defined WIN32
 #include <winsock2.h>
+typedef int socklen_t;
 #else
 #include <string.h>
 #include <unistd.h>
@@ -166,4 +167,5 @@ int main(int argc, char *argv[]) {
 	clearwinsock();
 	return 0;
 }
+
 
